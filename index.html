@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Perihelio — Atlas del sistema solar</title>
+<title>Planetarium — Atlas del sistema solar</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect width='34' height='34' rx='8' fill='%23050506'/%3E%3Cpath d='M3 31V17A14 14 0 0 1 17 31Z' fill='%23f2efe9'/%3E%3Cpath d='M3 7A24 24 0 0 1 27 31' fill='none' stroke='%23f2efe9' stroke-width='1.8' stroke-linecap='round'/%3E%3Ccircle cx='20' cy='14' r='3.8' fill='%23f0805a' stroke='%23050506' stroke-width='2.4'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -180,19 +180,19 @@ button{font:inherit;color:inherit}
 </style>
 </head>
 <body style="background:#050506;color:#f2efe9">
-<main class="hero" id="hero" data-screen-label="Hero Perihelio">
+<main class="hero" id="hero" data-screen-label="Hero Planetarium">
 
   <div class="stage" id="stage" aria-hidden="true"></div>
   <div class="scrim" aria-hidden="true"></div>
 
   <header class="header" id="header">
-    <a class="brand" href="#" aria-label="Perihelio — inicio">
+    <a class="brand" href="#" aria-label="Planetarium — inicio">
       <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
         <path d="M3 31V17A14 14 0 0 1 17 31Z" fill="#f2efe9"/>
         <path d="M3 7A24 24 0 0 1 27 31" stroke="#f2efe9" stroke-width="1.8" stroke-linecap="round"/>
         <circle class="brand__dot" cx="20" cy="14" r="3.8" stroke="#050506" stroke-width="2.4"/>
       </svg>
-      <span class="brand__word">perihelio</span>
+      <span class="brand__word">Planetarium</span>
     </a>
     <nav class="nav" id="site-nav" aria-label="Principal">
       <a href="#" aria-current="page">Atlas</a>
@@ -876,7 +876,7 @@ document.addEventListener('visibilitychange', () => { if (!document.hidden) last
 render(cur);
 entrance();
 try {
-  const THREE = await import('https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js');
+  const THREE = await import('./three.module.js');
   scene = createHero(THREE, stage, {
     index: cur, accents: PLANETS.map(p => p.accent), parallax: CONFIG.parallax, reducedMotion: RM,
     onSelect: k => goTo(k), onSwipe: d => go(d),
@@ -884,7 +884,7 @@ try {
     onInteract: () => { last = Date.now(); },
   });
 } catch (err) {
-  console.error('Perihelio: no se pudo cargar la escena 3D —', err?.message ?? String(err));
+  console.error('Planetarium: no se pudo cargar la escena 3D —', err?.message ?? String(err));
   hero.classList.add('no-webgl');
 }
 </script>
