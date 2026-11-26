@@ -302,7 +302,89 @@ section[id]{scroll-margin-top:14px}
 .footer__legal{justify-content:center;text-align:center}
 }
 </style>
-<style>.ph,.ph-light{position:relative;overflow:hidden}.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}</style></head>
+<style>.ph,.ph-light{position:relative;overflow:hidden}.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}</style>
+<style>
+/* ══ Secciones ampliadas Planetarium ════════════════════════════════════ */
+.feat-sec{padding:clamp(80px,13vh,150px) 0}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:clamp(40px,6vw,64px)}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:clamp(40px,6vw,64px)}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(22px,3.4vw,44px);margin-top:clamp(40px,6vw,64px)}
+.card{position:relative;border:1px solid var(--hair);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;
+      background:linear-gradient(to bottom,rgba(242,239,233,0.03),transparent 55%);transition:border-color .5s,transform .6s var(--ease-expo)}
+.card:hover{border-color:color-mix(in srgb,var(--pa,var(--accent)) 55%,transparent);transform:translateY(-5px)}
+.card .ph{flex:1 1 auto;min-height:200px;border-radius:0;border:0;border-bottom:1px solid var(--hair)}
+.card__body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:8px}
+.card__tag{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--pa,var(--accent))}
+.card__title{font-family:var(--font-display);font-weight:800;font-size:24px;line-height:1.05;margin:0}
+.card__desc{font-size:14px;line-height:1.58;color:var(--soft)}
+.card__meta{margin-top:8px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+/* equipo */
+.team{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px;margin-top:clamp(40px,6vw,64px)}
+.member{border:1px solid var(--hair);border-radius:22px;padding:28px 22px 26px;text-align:center;
+        background:linear-gradient(to bottom,rgba(242,239,233,0.03),transparent 55%);transition:border-color .5s,transform .6s var(--ease-expo)}
+.member:hover{border-color:color-mix(in srgb,var(--pa,var(--accent)) 55%,transparent);transform:translateY(-5px)}
+.avatar{width:74px;height:74px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;position:relative;
+        font-family:var(--font-display);font-weight:800;font-size:25px;color:#0a0a0c;
+        background:radial-gradient(circle at 32% 28%,color-mix(in srgb,var(--pa,var(--accent)) 70%,#fff),var(--pa,var(--accent)) 62%,#0a0a0c)}
+.avatar::after{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px solid var(--track)}
+.avatar--sm{width:42px;height:42px;font-size:15px;margin:0;flex:none}
+.avatar--sm::after{inset:-5px}
+.member__name{font-family:var(--font-display);font-weight:800;font-size:20px;margin:0;letter-spacing:.01em}
+.member__role{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pa,var(--accent));margin:8px 0 10px}
+.member__bio{font-size:13px;line-height:1.6;color:var(--muted)}
+/* investigación */
+.paper{border:1px solid var(--hair);border-radius:22px;padding:26px 28px;display:flex;gap:18px;
+       background:linear-gradient(to bottom,rgba(242,239,233,0.03),transparent 55%);transition:border-color .5s,transform .6s var(--ease-expo)}
+.paper:hover{border-color:color-mix(in srgb,var(--pa,var(--accent)) 55%,transparent);transform:translateY(-4px)}
+.paper__num{font-family:var(--font-display);font-weight:800;font-size:30px;color:var(--pa,var(--accent));flex:none;line-height:1}
+.paper__body{display:flex;flex-direction:column;gap:8px}
+.paper__journal{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.paper__title{font-family:var(--font-display);font-weight:700;font-size:21px;line-height:1.12;margin:0}
+.paper__desc{font-size:13.5px;line-height:1.6;color:var(--soft)}
+.paper__cite{font-size:12.5px;color:var(--muted);font-style:italic}
+/* testimonios */
+.testimonials{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:clamp(40px,6vw,64px)}
+.tquote{border:1px solid var(--hair);border-radius:22px;padding:28px 26px;display:flex;flex-direction:column;gap:16px;
+        background:linear-gradient(to bottom,rgba(242,239,233,0.03),transparent 55%)}
+.tquote__stars{color:var(--accent);letter-spacing:3px;font-size:13px}
+.tquote__text{font-size:15px;line-height:1.68;color:var(--soft);font-style:italic;margin:0;flex:1}
+.tquote__who{display:flex;align-items:center;gap:12px}
+.tquote__name{font-weight:600;font-size:14px}
+.tquote__meta{font-size:12px;color:var(--muted)}
+/* compromiso */
+.commit{position:relative;overflow:hidden;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);
+        padding:clamp(70px,11vh,120px) 0;background:rgba(106,168,240,0.03)}
+.commit::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(52% 62% at 50% 100%,rgba(106,168,240,0.13),transparent 72%)}
+.commit .body__inner{position:relative}
+.commit .display-head{margin-bottom:clamp(30px,5vw,54px)}
+.commit-item{border-top:1px solid var(--hair);padding-top:18px;display:flex;flex-direction:column;gap:8px}
+.commit-item h3{font-family:var(--font-display);font-weight:800;font-size:22px;margin:0}
+.commit-item p{font-size:13.5px;line-height:1.6;color:var(--muted);margin:0}
+/* CTA unirse (compacto) */
+.unirse{position:relative;text-align:center;overflow:hidden;padding:clamp(72px,12vh,130px) var(--gutter);
+        background:linear-gradient(180deg,var(--bg),rgba(240,128,90,0.06) 50%,var(--bg))}
+.unirse::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(52% 58% at 50% 50%,rgba(240,128,90,0.16),transparent 72%)}
+.unirse .display{font-size:clamp(38px,6.4vw,92px)}
+.unirse .lede{margin:20px auto 0}
+.btn-row.unirse-row{margin-top:36px}
+/* responsive para las nuevas secciones */
+@media (max-width:900px){
+.grid3,.testimonials{grid-template-columns:1fr 1fr}
+.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}
+.team{grid-template-columns:repeat(3,minmax(0,1fr))}
+.grid2{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+.grid3,.testimonials,.grid4{grid-template-columns:1fr}
+.team{grid-template-columns:repeat(2,minmax(0,1fr))}
+.commit-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:480px){
+.team{grid-template-columns:1fr}
+}
+</style></head>
 <body style="background:#050506;color:#f2efe9">
 <main class="hero" id="hero" data-screen-label="Hero Planetarium">
 
@@ -565,6 +647,244 @@ section[id]{scroll-margin-top:14px}
           <p class="tl-item__desc">El infrarrojo profundo vuelve a reescribir el atlas del cielo.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- 05 · Investigación destacada -->
+  <section class="feat-sec body__inner" id="investigacion" aria-labelledby="inv-head">
+    <div class="sec-head">
+      <span class="eyebrow reveal">05 · Investigación destacada</span>
+      <h2 class="display display-head reveal" data-delay="1" id="inv-head">Ciencia publicada,<br>frontera compartida</h2>
+      <p class="lede reveal" data-delay="2">Cada año, el observatorio y su red de colaboradores firman trabajos que revisan pares, se citan y se vuelven a enseñar. Una selección de lo más reciente.</p>
+    </div>
+    <div class="grid2">
+      <article class="paper reveal" style="--pa:#f0805a">
+        <span class="paper__num">A</span>
+        <div class="paper__body">
+          <span class="paper__journal">Icarus · 2025</span>
+          <h3 class="paper__title">Ciclos climáticos de Marte y su posible huella de agua</h3>
+          <p class="paper__desc">Reanálisis de estaciones de imágenes que delimita tres ciclos anuales de sublimación del hielo y su correlación con los depósitos ecuatoriales.</p>
+          <span class="paper__cite">Valera, I., Soto, L. et al. — 12 páginas, 41 figuras.</span>
+        </div>
+      </article>
+      <article class="paper reveal" data-delay="1" style="--pa:#e0a878">
+        <span class="paper__num">B</span>
+        <div class="paper__body">
+          <span class="paper__journal">Nature Astronomy · 2024</span>
+          <h3 class="paper__title">Radiometría de la Gran Mancha Roja: estabilidad de vórtices jovianos</h3>
+          <p class="paper__desc">Mediciones térmicas en el infrarrojo que acotan por primera vez el balance energético del mayor vórtice conocido del sistema.</p>
+          <span class="paper__cite">Miralles, H., Barrera, T. et al.</span>
+        </div>
+      </article>
+      <article class="paper reveal" style="--pa:#7fd3d8">
+        <span class="paper__num">C</span>
+        <div class="paper__body">
+          <span class="paper__journal">Planetary Science Journal · 2025</span>
+          <h3 class="paper__title">Clasificación espectral de lunas heladas alrededor de Saturno</h3>
+          <p class="paper__desc">Nuevo catálogo con más de treinta cuerpos menores, donde el agua retenida convive con trazadores orgánicos en distinta proporción por familia.</p>
+          <span class="paper__cite">Puig, C., Soto, L. et al.</span>
+        </div>
+      </article>
+      <article class="paper reveal" data-delay="1" style="--pa:#7d9cf5">
+        <span class="paper__num">D</span>
+        <div class="paper__body">
+          <span class="paper__journal">Astronomy &amp; Astrophysics · 2024</span>
+          <h3 class="paper__title">Arqueología óptica: estelas de cometas en archivos fotográficos</h3>
+          <p class="paper__desc">Recuperación de placas históricas digitalizadas para medir el decaimiento orbital de cometas de período corto.</p>
+          <span class="paper__cite">Barrera, T., Miralles, H. et al.</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 06 · Nuestro equipo -->
+  <section class="feat-sec body__inner" id="equipo" aria-labelledby="eq-head">
+    <div class="sec-head">
+      <span class="eyebrow reveal">06 · Nuestro equipo</span>
+      <h2 class="display display-head reveal" data-delay="1" id="eq-head">Las personas<br>que miran al cielo</h2>
+      <p class="lede reveal" data-delay="2">Astronomía, ingeniería y pedagogía se cruzan cada mañana en el suelo del observatorio. Estas son las voces que construyen el perihelio.</p>
+    </div>
+    <div class="team">
+      <article class="member reveal" style="--pa:#f0805a">
+        <div class="avatar">IV</div>
+        <h3 class="member__name">Dra. Inés Valera</h3>
+        <div class="member__role">Astrónoma · Planetología</div>
+        <p class="member__bio">Lidera el grupo de superficies planetarias y los catálogos de Marte. Doctora en ciencias planetarias, 18 años de observación en campaña.</p>
+      </article>
+      <article class="member reveal" data-delay="1" style="--pa:#e0a878">
+        <div class="avatar">HM</div>
+        <h3 class="member__name">Hugo Miralles</h3>
+        <div class="member__role">Ingeniero · Instrumentación</div>
+        <p class="member__bio">Ingeniero de óptica y detección: calibra cámaras, gradúa espectrógrafos y traduce física de frontera en equipos que aguantan la noche.</p>
+      </article>
+      <article class="member reveal" data-delay="2" style="--pa:#7fd3d8">
+        <div class="avatar">CP</div>
+        <h3 class="member__name">Carla Puig</h3>
+        <div class="member__role">Educadora · Programas</div>
+        <p class="member__bio">Coordina la escuelita del cielo, los talleres de barrio y el asesoramiento docente. Convierte datos en preguntas que caben en un aula.</p>
+      </article>
+      <article class="member reveal" data-delay="3" style="--pa:#e2c58a">
+        <div class="avatar">TB</div>
+        <h3 class="member__name">Toni Barrera</h3>
+        <div class="member__role">Divulgador · Planetario</div>
+        <p class="member__bio">Su voz guía las sesiones de la cúpula y las noches públicas. Cuenta cada mundo como si fuera la primera vez que alguien lo ve.</p>
+      </article>
+      <article class="member reveal" data-delay="3" style="--pa:#7d9cf5">
+        <div class="avatar">LS</div>
+        <h3 class="member__name">Lara Soto</h3>
+        <div class="member__role">Directora · Investigación</div>
+        <p class="member__bio">Vigila el programa científico, teje alianzas universitarias y defiende la buena práctica: análisis reproducible y datos abiertos siempre.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 07 · Educación y divulgación -->
+  <section class="feat-sec body__inner" id="educacion" aria-labelledby="edu-head">
+    <div class="sec-head">
+      <span class="eyebrow reveal">07 · Educación y divulgación</span>
+      <h2 class="display display-head reveal" data-delay="1" id="edu-head">Aprender<br>con las manos arriba</h2>
+      <p class="lede reveal" data-delay="2">Del patio del colegio a la cúpula, la ciencia no es un espectáculo pasivo: se construye en grupo, se pregunta y se vuelve a preguntar.</p>
+    </div>
+    <div class="grid3">
+      <article class="card reveal" style="--pa:#f0805a">
+        <div class="ph" data-parallax="0.08" style="--pa:#f0805a;background:linear-gradient(140deg,#3a1a12,#0b0c10)"><div class="ph__orbit"></div></div>
+        <div class="card__body">
+          <span class="card__tag">Aulas y colegios</span>
+          <h3 class="card__title">Programas escolares</h3>
+          <p class="card__desc">Unidades curriculares por ciclo, guías para el docente y maletas didácticas con material para llevar al aula.</p>
+          <span class="card__meta">Primaria · ESO · Bachillerato</span>
+        </div>
+      </article>
+      <article class="card reveal" data-delay="1" style="--pa:#e2c58a">
+        <div class="ph" data-parallax="0.08" style="--pa:#e2c58a;background:linear-gradient(140deg,#2e2413,#0b0c10)"><div class="ph__orbit"></div></div>
+        <div class="card__body">
+          <span class="card__tag">Fuera de clase</span>
+          <h3 class="card__title">Talleres y campamentos</h3>
+          <p class="card__desc">Construcción de espectroscopios, mapas de constelaciones y noches de campamento astronómico para todas las edades.</p>
+          <span class="card__meta">Fines de semana · Semana Santa · Verano</span>
+        </div>
+      </article>
+      <article class="card reveal" data-delay="2" style="--pa:#6aa8f0">
+        <div class="ph" data-parallax="0.08" style="--pa:#6aa8f0;background:linear-gradient(140deg,#16243f,#0b0c10)"><div class="ph__orbit"></div></div>
+        <div class="card__body">
+          <span class="card__tag">Noches abiertas</span>
+          <h3 class="card__title">Noches públicas de observatorio</h3>
+          <p class="card__desc">Cuando el cielo se despeja, abrimos la cúpula y enseñamos a leer el firmamento con nuestros propios telescopios.</p>
+          <span class="card__meta">Entrada libre · Reserva previa</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 08 · Visita y experiencias -->
+  <section class="feat-sec body__inner" id="experiencias" aria-labelledby="exp-head">
+    <div class="sec-head">
+      <span class="eyebrow reveal">08 · Visita y experiencias</span>
+      <h2 class="display display-head reveal" data-delay="1" id="exp-head">No se visita:<br>se atraviesa</h2>
+      <p class="lede reveal" data-delay="2">Tres maneras de dejar la sala de entrada y meterte de lleno en el sistema, entre el suelo técnico y la cúpula.</p>
+    </div>
+    <div class="grid3">
+      <article class="card reveal" style="--pa:#f0805a">
+        <div class="ph" data-parallax="0.08" style="--pa:#f0805a;background:linear-gradient(140deg,#3a1a12,#0b0c10)"><div class="ph__orbit"></div></div>
+        <div class="card__body">
+          <span class="card__tag">00 | Simulador</span>
+          <h3 class="card__title">Vuelo interplanetario</h3>
+          <p class="card__desc">Cuatro asientos, seis ejes de movimiento y una trayectoria a Plutón calculada con los elementos orbitales reales del mes.</p>
+          <span class="card__meta">12 min · desde 8 años</span>
+        </div>
+      </article>
+      <article class="card reveal" data-delay="1" style="--pa:#7fd3d8">
+        <div class="ph" data-parallax="0.08" style="--pa:#7fd3d8;background:linear-gradient(140deg,#12333a,#0b0c10)"><div class="ph__orbit"></div></div>
+        <div class="card__body">
+          <span class="card__tag">01 | Cúpula</span>
+          <h3 class="card__title">Planetario inmersivo</h3>
+          <p class="card__desc">Un cielo de 8K sobre tu cabeza y un relato en directo: de la precesión de los polos a la deriva de las constelaciones.</p>
+          <span class="card__meta">40 min · sesiones guiadas</span>
+        </div>
+      </article>
+      <article class="card reveal" data-delay="2" style="--pa:#6aa8f0">
+        <div class="ph" data-parallax="0.08" style="--pa:#6aa8f0;background:linear-gradient(140deg,#16243f,#0b0c10)"><div class="ph__orbit"></div></div>
+        <div class="card__body">
+          <span class="card__tag">02 | Realidad aumentada</span>
+          <h3 class="card__title">Recorrido aumentado</h3>
+          <p class="card__desc">Gafas de seguimiento que sitúan órbitas y lunas sobre las maquetas físicas: tocas el mármol y orbitas a su alrededor.</p>
+          <span class="card__meta">Con entrada general · gratis</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 09 · Testimonios -->
+  <section class="feat-sec body__inner" id="testimonios" aria-labelledby="tes-head">
+    <div class="sec-head">
+      <span class="eyebrow reveal">09 · Testimonios</span>
+      <h2 class="display display-head reveal" data-delay="1" id="tes-head">Lo que<br>se llevan las visitas</h2>
+      <p class="lede reveal" data-delay="2">No hace falta ser astrónomo para salir con las gafas llenas de estrellas. Algunas de las voces que han pasado por aquí.</p>
+    </div>
+    <div class="testimonials">
+      <figure class="tquote reveal">
+        <div class="tquote__stars" aria-label="5 sobre 5">★★★★★</div>
+        <p class="tquote__text">«Traje a mis hijos y el simulador les dejó sin palabras. Nos quedamos a la noche de observación y ya están apuntados al campamento de verano.»</p>
+        <figcaption class="tquote__who">
+          <span class="avatar avatar--sm" style="--pa:#f0805a">MO</span>
+          <span><span class="tquote__name">Marina Osorio</span><br><span class="tquote__meta">Visita familiar · 2026</span></span>
+        </figcaption>
+      </figure>
+      <figure class="tquote reveal" data-delay="1">
+        <div class="tquote__stars" aria-label="5 sobre 5">★★★★★</div>
+        <p class="tquote__text">«He traído a tres grupos de secundaria. El material curricular está tan bien hilado que las clases funcionan solas después de la salida.»</p>
+        <figcaption class="tquote__who">
+          <span class="avatar avatar--sm" style="--pa:#7f5cd9">JC</span>
+          <span><span class="tquote__name">Jordi Camps</span><br><span class="tquote__meta">Docente de física · IES Rambla</span></span>
+        </figcaption>
+      </figure>
+      <figure class="tquote reveal" data-delay="2">
+        <div class="tquote__stars" aria-label="5 sobre 5">★★★★★</div>
+        <p class="tquote__text">«Un espacio a la altura de un museo europeo de referencia: riguroso, impecable y sorprendentemente abierto al público no experto.»</p>
+        <figcaption class="tquote__who">
+          <span class="avatar avatar--sm" style="--pa:#6aa8f0">ER</span>
+          <span><span class="tquote__name">Elena Roca</span><br><span class="tquote__meta">Prensa cultural · La Esfera</span></span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 10 · Sostenibilidad y compromiso -->
+  <section class="commit" id="compromiso" aria-label="Sostenibilidad y compromiso">
+    <div class="body__inner">
+      <div class="sec-head">
+        <span class="eyebrow reveal">10 · Sostenibilidad y compromiso</span>
+        <h2 class="display display-head reveal">Mirar el cielo<br>sin apagar la tierra</h2>
+      </div>
+      <div class="grid4">
+        <div class="commit-item reveal">
+          <h3>Cielo oscuro</h3>
+          <p>Iluminación apantallada y cálculo de flujo para que el observatorio sea compatible con el entorno nocturno que estudia.</p>
+        </div>
+        <div class="commit-item reveal" data-delay="1">
+          <h3>Energía limpia</h3>
+          <p>Somos autosuficientes: cubierta fotovoltaica y gestión de frío de la cúpula que recorta nuestro consumo un 62 %.</p>
+        </div>
+        <div class="commit-item reveal" data-delay="2">
+          <h3>Datos abiertos</h3>
+          <p>Toda observación pública se publica en acceso libre, con licencia clara y pasos de análisis, para que cualquiera la reproduzca.</p>
+        </div>
+        <div class="commit-item reveal" data-delay="3">
+          <h3>Ciencia para todos</h3>
+          <p>Tarifas reducidas, accesibilidad plena y programas en barrios para que la mirada de arriba no sea un privilegio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 · Únete / voluntariado -->
+  <section class="unirse" id="unirse" aria-label="Únete al equipo">
+    <div class="eyebrow reveal">Planetarium · Voluntariado</div>
+    <h2 class="display reveal" data-delay="1">Colabora<br>en la vigilancia del cielo</h2>
+    <p class="lede reveal" data-delay="2">Damos la bienvenida a voluntarios: astroturismo guiado, mantenimiento de telescopios, divulgación escolar y apoyo en las noches públicas. No hace falta título, solo curiosidad.</p>
+    <div class="btn-row unirse-row reveal" data-delay="3">
+      <a class="btn btn--solid" href="#equipo">Conocer al equipo</a>
+      <a class="btn" href="#testimonios">Ver experiencias</a>
     </div>
   </section>
 
