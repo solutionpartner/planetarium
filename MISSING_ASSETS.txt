@@ -1,0 +1,17 @@
+# Planetarium (Perihelio) — Activos pendientes
+## Generado desde index.html · demo-perihelio
+
+Secciones que usan PLACEHOLDER (gradiente con acento por planeta + etiqueta).
+Sustituir con fotografía planetaria oficial (NASA/ESA, libre de derechos) o render 4K.
+
+| # | Sección | Planeta      | Acento   | Descripción recomendada                      |
+|---|---------|--------------|----------|----------------------------------------------|
+| 1 | 01 · La exploración | Marte        | #f0805a  | Vista de superficie marciana o Marte en disco |
+| 2 | 02 · Banco | Mercurio     | #b8b0a6  | Disco de Mercurio, fulgor de polo a polo      |
+| 3 | 02 · Banco | Venus        | #e3b06b  | Cúpulas de nubes venusianas en ultravioleta   |
+| 4 | 02 · Banco | Marte        | #f0805a  | Cráteres / paisaje del cruce de Perseverance  |
+| 5 | 02 · Banco | Júpiter      | #e0a878  | Gran Mancha Roja + bandas jovianas            |
+| 6 | 02 · Banco | Saturno      | #e2c58a  | Sistema de anillos en alto contraste          |
+| 7 | 02 · Banco | Neptuno      | #7d9cf5  | Neptuno azul profundo con Tritón              |
+
+Formato recomendado: JPG/AVIF/WebP, relación 3:4 o 4:4, ≥1200px de ancho.
